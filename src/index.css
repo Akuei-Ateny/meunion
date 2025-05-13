@@ -1,0 +1,85 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%; /* black */
+    --foreground: 0 0% 100%; /* white */
+
+    --card: 0 0% 0%; /* black */
+    --card-foreground: 0 0% 100%; /* white */
+
+    --popover: 0 0% 0%; /* black */
+    --popover-foreground: 0 0% 100%; /* white */
+
+    --primary: 30 100% 55%; /* princeton orange */
+    --primary-foreground: 0 0% 0%; /* black */
+
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 0 0% 100%; /* white */
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 30 100% 55%; /* princeton orange */
+    --accent-foreground: 0 0% 0%; /* black */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 30 100% 55%; /* princeton orange */
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #F58025;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E57015;
+  }
+}
+
+@layer components {
+  .tiger-btn {
+    @apply bg-princeton-orange hover:bg-princeton-orange/90 text-princeton-black font-bold py-3 px-6 rounded-lg transition-all shadow-lg hover:shadow-xl focus:ring-2 focus:ring-princeton-orange/50 focus:outline-none transform hover:-translate-y-0.5;
+  }
+  
+  .tiger-gradient {
+    @apply bg-gradient-to-r from-princeton-orange to-[#FF5E00];
+  }
+  
+  .profile-card {
+    @apply bg-secondary rounded-2xl overflow-hidden shadow-xl border border-princeton-orange/30;
+  }
+  
+  .swipe-card {
+    @apply absolute w-full h-full bg-secondary rounded-2xl shadow-xl border border-princeton-orange/30 transition-all;
+  }
+}
